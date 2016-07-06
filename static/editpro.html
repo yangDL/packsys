@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>挠挠商品包装平台</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/plugin.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!--[if lt IE 9]>
+        <script src="js/ie/respond.min.js"></script>
+        <script src="js/ie/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <header id="header" class="navbar"></header>
+        <nav id="nav" class="nav-primary visible-lg"></nav>
+        <section id="content">
+            <section class="main padder">
+                <div class="clearfix">
+                    <h4><i class="icon-anchor icon-xlarge"></i><a href="#" id="edit-title">加载中...</a></h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10 col-sm-12">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li class="active"><a href="#base" data-toggle="tab">基本信息</a></li>
+                                    <li><a href="#ds" data-toggle="tab">详情和尺码</a></li>
+                                    <li><a href="#sku" data-toggle="tab">设置SKU</a></li>
+                                    <li><a href="#match" data-toggle="tab">设置搭配</a></li>
+                                </ul>
+                            </header>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="base">
+                                    <div class="col-lg-12 form-group alert alert-warning">
+                                        <div class="col-lg-12 form-group">
+                                            <label>商品标题</label><input type="text" class="form-control" id="pro-title">
+                                        </div>
+                                        <div class="col-lg-12 form-group">
+                                            <label>商品简介</label><textarea class="form-control" id="pro-desc" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>所属分类</label><select class="form-control" id="pro-cate"></select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>子分类</label><select class="form-control" id="pro-subcate"></select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>所属品牌</label><select class="form-control" id="pro-brand"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 form-group alert alert-info">
+                                        <div class="col-lg-6 form-group">
+                                            <label>原价</label><input type="text" class="form-control" id="pro-op">
+                                        </div>
+                                        <div class="col-lg-6 form-group">
+                                            <label>现价</label><input type="text" class="form-control" id="pro-np">
+                                        </div>
+                                        <div class="col-lg-6 form-group">
+                                            <label>货源地</label><select class="form-control" id="pro-place"></select>
+                                        </div>
+                                        <div class="col-lg-6 form-group">
+                                            <label>试穿</label>
+                                            <select class="form-control" id="pro-cantry">
+                                                <option value="0">不可试穿</option>
+                                                <option value="1">可试穿</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>推广佣金</label><input type="text" class="form-control" id="pro-cashback">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>利润</label><input type="text" class="form-control" id="pro-profit">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 form-group alert alert-success">
+                                        <div class="col-lg-12 form-group">
+                                            <label>商品推荐词</label><textarea class="form-control" id="pro-word" rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <h4 style="color: #5cb85c;">元素标签</h4>
+                                    <div class="line line-dashed"></div>
+                                    <div class="col-lg-12 form-group">
+                                        <div class="tag-list" id="tag-element"></div>
+                                    </div>
+                                    <h4 style="color: #f0ad4e;">身材缺陷标签</h4>
+                                    <div class="line line-dashed"></div>
+                                    <div class="col-lg-12 form-group">
+                                        <div class="tag-list" id="tag-defect"></div>
+                                    </div>
+                                    <h4 style="color: #5cb85c;">场景标签</h4>
+                                    <div class="line line-dashed"></div>
+                                    <div class="col-lg-12 form-group">
+                                        <div class="tag-list" id="tag-scene"></div>
+                                    </div>
+                                    <h4 style="color: #f0ad4e;">风格标签</h4>
+                                    <div class="line line-dashed"></div>
+                                    <div class="col-lg-12 form-group">
+                                        <div class="tag-list" id="tag-style"></div>
+                                    </div>
+                                    <h4 style="color: #5cb85c;">回应标签</h4>
+                                    <div class="line line-dashed"></div>
+                                    <div class="col-lg-12 form-group">
+                                        <div class="tag-list" id="tag-resp"></div>
+                                    </div>
+                                    <div style="text-align: center; width: 100%;">
+                                        <button type="submit" class="btn btn-success" id="product-base">提交基本信息</button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="ds">
+                                    <h4 style="color: #5cb85c;">商品详情</h4>
+                                    <div class="line line-dashed m-t-large"></div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-5 form-group">
+                                            <label>商品简介</label><textarea class="form-control" id="detail-desc" rows="4"></textarea>
+                                        </div>
+                                        <div class="col-lg-2 form-group">
+                                            <label>上传图片</label>
+                                            <div class="up-img"><input type="file" id="upload-file" /><i class="icon-plus icon-xlarge"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-12 form-group">
+                                            <label>详情图片</label>
+                                            <div class="upload-detail pro-imgs"></div>
+                                        </div> 
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-12 form-group">
+                                            <label>尺寸图片</label>
+                                            <div class="upload-size pro-imgs"></div>
+                                        </div> 
+                                    </div>
+                                    <div class="row form-group" style="text-align: center;">
+                                        <button type="submit" class="btn btn-info" id="product-ds">提交详情信息</button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="sku">
+                                    <div class="row form-group col-lg-12">
+                                        <div class="col-lg-3 form-group">
+                                            <label>颜色</label><select class="form-control" id="sku-1"></select>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label>尺码</label><select class="form-control" id="sku-2"></select>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label>价格</label><input type="text" class="form-control" id="sku-price">
+                                        </div>
+                                        <div class="col-lg-2 form-group">
+                                            <label>库存</label><input type="text" class="form-control" id="sku-stock">
+                                        </div>
+                                        <div class="col-lg-1 form-group" style="text-align: right;">
+                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                            <button type="submit" class="btn btn-default" id="add-sku">添加该组合</button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row form-group col-lg-12" id="sku-list"></div>
+                                    <div class="row form-group" style="text-align: center;">
+                                        <button type="submit" class="btn btn-success" id="product-sku">提交SKU信息</button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="match">
+                                    <div class="form-group col-lg-12  alert alert-warning" style="display: none;">
+                                        
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <section class="panel">
+                                            <header class="panel-heading" style="color: red;"> <i class="icon-list"></i>搜索可搭配列表信息</header>
+                                            <div class="row text-small">
+                                                <div class="col-lg-6 form-group">
+                                                    <input type="text" class="form-control" id="match-title" placeholder="搜索标题，可不填">
+                                                </div>
+                                                <div class="col-lg-3 form-group">
+                                                    <select class="form-control" id="match-cate"><option value="0">选择分类</option></select>
+                                                </div>
+                                                <div class="col-lg-3 form-group">
+                                                    <select class="form-control" id="match-brand"><option value="0">选择品牌</option></select>
+                                                </div>
+                                                <div class="col-lg-3 form-group">
+                                                    <select class="form-control" id="match-scene"><option value="0">选择场景</option></select>
+                                                </div>
+                                                <div class="col-lg-3 form-group">
+                                                    <select class="form-control" id="match-style"><option value="0">选择风格</option></select>
+                                                </div>
+                                                <div class="col-lg-3 form-group">
+                                                    <select class="form-control" id="match-defect"><option value="0">选择身材缺陷</option></select>
+                                                </div>
+                                                <div class="col-lg-1 form-group" style="text-align: right;">
+                                                    <button type="submit" class="btn btn-info" id="match-search">搜索该搭配</button>
+                                                </div>
+                                            </div>
+                                            <div class="pull-out m-t-small">
+                                                <table class="table table-striped b-t text-small table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>主图</th><th>Id</th><th>标题</th><th>所属商店</th><th>品牌</th>
+                                                            <th>分类</th><th>现价</th><th>操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="match-list">
+                                                        <div class="alert alert-success" style="width: 330px; margin: 20px auto; text-align: center;">
+                                                            <strong>Tip : </strong>请进行商品搜索， 从搜索结果中选择搭配！
+                                                        </div>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <footer class="panel-footer">
+                                                <div class="row">
+                                                    <div class="col-lg-4" id="count-num"></div>
+                                                    <div class="col-lg-8 text-right text-center-sm">
+                                                        <ul class="pagination pagination-small m-t-none m-b-none" id="match-page"></ul>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                    <div class="col-lg-12">          
+                                        <section class="panel">
+                                            <header class="panel-heading" style="color: blue;"> <i class="icon-list"></i>待选搭配列表信息</header>
+                                            <div class="pull-out">
+                                                <table class="table table-striped b-t text-small table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>主图</th><th>Id</th><th>标题</th><th>所属商店</th><th>品牌</th>
+                                                            <th>分类</th><th>现价</th><th>操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="match-choose-list"></tbody>
+                                                </table>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="row form-group" style="text-align: center;">
+                                        <button type="submit" class="btn btn-success" id="product-match">提交搭配信息</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-2 hidden-sm" id="show-mainimg">
+                        <div class="add-btn-list">
+                            <a class="btn btn-success" id="add-brand">新增品牌</a>
+                            <a class="btn btn-info" id="add-tag">新增标签</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- footer -->
+        <footer id="footer"></footer>
+        <div id="plugin"></div>
+        <!-- / footer -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.dragsort-0.5.2.min.js" ></script>
+        <!-- app -->
+        <script src="js/app.js"></script>
+        <script src="js/app.data.js"></script>
+        <script src="js/fuelux/fuelux.js"></script>
+        <!-- file input -->
+        
+        <script src="plupload/moxie.min.js"></script>
+        <script src="plupload/plupload.full.min.js"></script>
+        <script src="qiniu/qiniu.min.js"></script>
+        <script src="js/template_html.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/edit.js"></script>
+    </body>
+
+</html>

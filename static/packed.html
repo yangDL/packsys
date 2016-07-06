@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>挠挠商品包装平台</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!--[if lt IE 9]>
+        <script src="js/ie/respond.min.js"></script>
+        <script src="js/ie/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <header id="header" class="navbar"></header>
+        <nav id="nav" class="nav-primary visible-lg"></nav>
+        <section id="content">
+            <section class="main padder">
+                <div class="clearfix">
+                    <h4><i class="icon-list icon-xlarge"></i>已包装商品列表</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <header class="panel-heading"> <i class="icon-list"></i>已包装商品列表信息</header>
+                            <div class="row text-small">
+                                <div class="col-lg-3 m-b-mini">
+                                    <input id="pro-title" class="form-control" placeholder="搜索标题">
+                                </div>
+                                <div class="col-lg-2 m-b-mini">
+                                    <select id="pro-cate" class="form-control"></select>
+                                </div>
+                                <div class="col-lg-2 m-b-mini">
+                                    <select id="pro-brand" class="form-control"></select>
+                                </div>
+                                <div class="col-lg-2 m-b-mini">
+                                    <a id="search" href="javascript:;" class="btn btn-default">搜 索</a>
+                                </div>
+                            </div>
+                            <div class="pull-out m-t-small">
+                                <table class="table table-striped b-t text-small table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>主图</th><th>Id</th><th  width="450px">标题</th><th>所属商店</th><th>品牌</th>
+                                            <th>分类</th><th>原价</th><th>现价</th><th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="packpro-list"></tbody>
+                                </table>
+                            </div>
+                            <footer class="panel-footer">
+                                <div class="row">
+                                    <div class="col-lg-4" id="count-num"></div>
+                                    <div class="col-lg-8 text-right text-center-sm">
+                                        <ul class="pagination pagination-small m-t-none m-b-none" id="packpro-page"></ul>
+                                    </div>
+                                </div>
+                            </footer>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- footer -->
+        <footer id="footer"></footer>
+        <div id="plugin"></div>
+        <!-- / footer -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.js"></script>
+        <!-- app -->
+        <script src="js/app.js"></script>
+        <script src="js/app.data.js"></script>
+        <!-- file input -->
+        <script src="plupload/moxie.min.js"></script>
+        <script src="plupload/plupload.full.min.js"></script>
+        <script src="qiniu/qiniu.min.js"></script>
+        
+        <script src="js/template_html.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/packed.js"></script>
+    </body>
+
+</html>
